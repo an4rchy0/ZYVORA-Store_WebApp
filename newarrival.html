@@ -1,0 +1,484 @@
+<!doctype html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e2e2e2",
+            "tertiary-container": "#513d00",
+            "on-primary-container": "#ff8a7e",
+            "on-surface-variant": "#58413f",
+            "surface-bright": "#f9f9f9",
+            "on-secondary-fixed-variant": "#4f4445",
+            "on-primary-fixed": "#410002",
+            "inverse-surface": "#2f3131",
+            "primary-fixed-dim": "#ffb4ab",
+            primary: "#5c0004",
+            "outline-variant": "#e0bfbb",
+            "on-tertiary-container": "#d5a500",
+            error: "#ba1a1a",
+            tertiary: "#362800",
+            "secondary-fixed": "#efdfdf",
+            "inverse-on-surface": "#f0f1f1",
+            "tertiary-fixed-dim": "#f6bf00",
+            surface: "#f9f9f9",
+            outline: "#8c716e",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            secondary: "#675c5c",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#6c6060",
+            "tertiary-fixed": "#ffdf96",
+            "surface-container": "#eeeeee",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#801212",
+            background: "#f9f9f9",
+            "surface-tint": "#ab332d",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-primary": "#ffb4ab",
+            "error-container": "#ffdad6",
+            "secondary-container": "#ecdcdc",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dadada",
+            "on-primary-fixed-variant": "#8a1a18",
+            "secondary-fixed-dim": "#d2c3c3",
+            "on-surface": "#1a1c1c",
+            "on-background": "#1a1c1c",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#ffdad6",
+            "on-secondary-fixed": "#22191a",
+            "surface-container-low": "#f3f3f4",
+            "on-tertiary-fixed-variant": "#594400",
+            "surface-container-high": "#e8e8e8",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            gutter: "1.5rem",
+            "container-max": "1280px",
+            "margin-xs": "1rem",
+            "margin-md": "2.5rem",
+            "margin-lg": "5rem",
+          },
+          fontFamily: {
+            "label-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "label-sm": ["Be Vietnam Pro"],
+            "headline-xl": ["EB Garamond"],
+            "headline-md": ["EB Garamond"],
+            "body-md": ["Be Vietnam Pro"],
+            "headline-lg": ["EB Garamond"],
+            "headline-lg-mobile": ["EB Garamond"],
+          },
+          fontSize: {
+            "label-md": [
+              "14px",
+              {
+                lineHeight: "1.2",
+                letterSpacing: "0.05em",
+                fontWeight: "600",
+              },
+            ],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+            "headline-xl": [
+              "48px",
+              {
+                lineHeight: "1.1",
+                letterSpacing: "-0.02em",
+                fontWeight: "500",
+              },
+            ],
+            "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+            "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+            "headline-lg-mobile": [
+              "28px",
+              { lineHeight: "1.2", fontWeight: "500" },
+            ],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .ebGaramond {
+      font-family: "EB Garamond", serif;
+    }
+
+    .beVietnamPro {
+      font-family: "Be Vietnam Pro", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+  <!-- TopNavBar -->
+  <header
+    class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 dark:border-outline/20 transition-all duration-300">
+    <div class="flex justify-between items-center w-full px-margin-md md:px-margin-lg py-4 max-w-container-max mx-auto">
+      <a class="font-headline-lg text-headline-lg tracking-widest text-primary dark:text-primary-fixed-dim ebGaramond hover:opacity-80 transition-opacity"
+        href="index.html">
+        ZYVORA
+      </a>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+          href="catalog.html">
+          Shop</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+          href="newarrival.html">
+          New Arrivals</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+          href="about.html">
+          Our Story</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="cart.html"
+          class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity flex items-center"
+          data-icon="shopping_bag">
+          shopping_bag
+        </a>
+        <a href="#"
+          class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity flex items-center"
+          data-icon="person">
+          person
+        </a>
+        <button id="menu-btn"
+          class="md:hidden flex items-center hover:opacity-80 transition-opacity focus:outline-none">
+          <span class="material-symbols-outlined text-on-surface-variant" data-icon="menu">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Slider -->
+    <div id="mobile-menu"
+      class="max-h-0 overflow-hidden md:hidden bg-surface/95 backdrop-blur-lg border-t border-outline-variant/20 transition-all duration-300 ease-in-out">
+      <div class="flex flex-col px-margin-md py-6 gap-4">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10"
+          href="catalog.html">Shop</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10"
+          href="newarrival.html">New Arrivals</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2"
+          href="about.html">Our Story</a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-20 pb-32 px-margin-md md:px-margin-lg">
+      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+        <div class="z-10">
+          <span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-4 block beVietnamPro">The
+            Summer Edit</span>
+          <h1 class="font-headline-xl text-headline-xl text-primary mb-6 ebGaramond">
+            Freshly Bloomed
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg beVietnamPro">
+            Discover our latest collection of hand-pressed botanical cases.
+            Each piece is a unique fusion of natural elegance and modern
+            protection, crafted for those who find beauty in the details of
+            the earth.
+          </p>
+          <button
+            class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 duration-150 ease-in-out beVietnamPro">
+            Explore Collection
+          </button>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] bg-secondary-container rounded-lg overflow-hidden">
+            <img class="w-full h-full object-cover"
+              data-alt="A high-end, professionally photographed scene featuring a premium artisanal phone case with real pressed flowers inside a transparent resin back. The setting is a bright, minimalist studio with soft daylight and delicate floral accents in the background. The color palette emphasizes warm neutrals and deep burgundy tones, reflecting a romantic and sophisticated boutique aesthetic."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh0n1oWEmh8Md6963sFM0RiQ90L4f7HtEDE9BOP4Wdvms3_vyOxz1FoN1J7VAW881N7yyiniyC_rB4aUF9ZJx0uY2HlbzNi7IYAIFjfSZG2hyLxlWx-Lrr9mWr2Yjd8uj7vZIammc2L0wUGtkxf4Ix1Baymd5jlpYqvhwOhJAu-TBRFw3iWUZNBQBr3cOVcOe7hHsbSDGpKzjAKY4fghSBjOp-bc5iCjvHPKOwpww99F2b6eALammUb1w3QNdxJFjzrez4kUs3fMo" />
+          </div>
+          <!-- Floral Accent Overlap -->
+          <div class="absolute -bottom-10 -left-10 w-48 h-48 hidden md:block">
+            <img class="w-full h-full object-contain mix-blend-multiply opacity-80"
+              data-alt="Close up of a single high-quality dried red rose, professionally cut out to show organic edges. The lighting is soft and flattering, emphasizing the tactile textures of the petals. The image is designed to overlap UI elements, creating a layered, artisanal floral aesthetic consistent with a luxury brand."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDitPzThBZfK1Oh2DGPLy1zCuS04OeTBcuHIVuwsGb4SVI5KhV9ebml55j2NoOcZ5487pmTQa26Pb0Jz5t128nngTjhaZ6aHO3mnrSD6MF2J6_LVvCS4Tev3nSmGeQmZeiLeZ7TIi2xOUdrzezV91CA02kPe4B2jZeez2aMVjKsE1dhjtlOcCPCVJutzHEzaE-QiQEE2kcE-xHMXZLDAfcspQZV86sGF0ZZ5c1B5tyuh_kFaMjcfAc5Km8LKtZJAO9JHcJXxn9oWow" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New Products Grid -->
+    <section class="py-margin-md bg-white">
+      <div class="max-w-container-max mx-auto px-margin-md md:px-margin-lg">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary ebGaramond">
+              Curated Boutique Pieces
+            </h2>
+            <div class="h-1 w-24 bg-primary mt-4"></div>
+          </div>
+          <div class="flex gap-4">
+            <button
+              class="material-symbols-outlined p-2 border border-outline-variant rounded-full text-primary hover:bg-secondary-container transition-colors"
+              data-icon="chevron_left">
+              chevron_left
+            </button>
+            <button
+              class="material-symbols-outlined p-2 border border-outline-variant rounded-full text-primary hover:bg-secondary-container transition-colors"
+              data-icon="chevron_right">
+              chevron_right
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Product 1 -->
+          <div class="group">
+            <div class="aspect-[3/4] bg-surface-container mb-6 relative overflow-hidden rounded-lg">
+              <span
+                class="absolute top-4 left-4 z-20 bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm rounded-full beVietnamPro">Limited
+                Edition</span>
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="A premium smartphone case called The Heritage Rose featuring a single, deep red rose petal embedded in clear high-gloss resin. The product is displayed on a soft pink surface with minimalist styling. The lighting is warm and directional, creating soft shadows that emphasize the artisanal quality and tactile nature of the case."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4YRmhE5ynNuY4mrO6LzWJEc44jRwvAiuZE-griTdOJPfcAhV6PtkPdD6zTdHrx3etaPe5CQUz_52bdMHt0qHZtoYFICjkIGHneqVQNHk4uA7JRe0yDryt387HlezbFlR-REg_-KUAPt9RcJq_7cXKxE7gD_ENKvcTljsb4pJR2nKiB4Ok48Jco_vL-05bo35Cf54sfkHVIUxi7lCTZ7pMH-yOs71I8pDpkQdXPfH4FEuRPhyml-LZ6QyB2VwGPER-BS7vgqr6DSI" />
+              <button
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300 shadow-sm">
+                <span class="material-symbols-outlined text-primary"
+                  data-icon="add_shopping_cart">add_shopping_cart</span>
+              </button>
+            </div>
+            <div class="text-center">
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-1 ebGaramond">
+                The Heritage Rose
+              </h3>
+              <div class="flex justify-center items-center gap-1 mb-2">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant ml-1 beVietnamPro">(48)</span>
+              </div>
+              <p class="font-label-md text-label-md text-primary beVietnamPro">
+                $85.00
+              </p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="group">
+            <div class="aspect-[3/4] bg-surface-container mb-6 relative overflow-hidden rounded-lg">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="A luxurious phone case named Midnight Bloom featuring dark navy and purple dried floral arrangements on a black onyx-style background. The product is photographed in low-key lighting with dramatic highlights on the glossy finish. The overall mood is sophisticated, romantic, and nocturnal, fitting for a premium floral boutique."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB776m4yyGO-JCJ4RJg5rA7FlK-nCOKz58amuXC6WvpbFv6qupYl0R6_cCnKe4l6wCoRBE3JJrxEy_bI-0csGh6_gDryR153-iOKzPvc7ostpp6tVbqFwFk1paSI4jp6gsxQj-7Yl8yRREA4azmWEc9yAwDv0cOPxfpCzkPxNaWras7b2XoOv6J4rTP2VQzAdF43uP4SPpVp53PpdqqVoq891nBDRiAW_j70LeEO5ZlwZt_Zn1NwCHOVfo2qzMaKjzAeccsHgh4qXE" />
+              <button
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300 shadow-sm">
+                <span class="material-symbols-outlined text-primary"
+                  data-icon="add_shopping_cart">add_shopping_cart</span>
+              </button>
+            </div>
+            <div class="text-center">
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-1 ebGaramond">
+                Midnight Bloom
+              </h3>
+              <div class="flex justify-center items-center gap-1 mb-2">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 0.5">star</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant ml-1 beVietnamPro">(32)</span>
+              </div>
+              <p class="font-label-md text-label-md text-primary beVietnamPro">
+                $72.00
+              </p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="group">
+            <div class="aspect-[3/4] bg-surface-container mb-6 relative overflow-hidden rounded-lg">
+              <span
+                class="absolute top-4 left-4 z-20 bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm rounded-full beVietnamPro">Limited
+                Edition</span>
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="A boutique phone case titled Golden Petal Inlay showcasing white wildflower petals with genuine 24k gold leaf flecks. The photography is bright and ethereal, using a high-key lighting setup that makes the gold leaf sparkle. The background is a clean, textured white linen, emphasizing the artisanal and handmade quality of the product."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZX52U74VWoFi9CsPPolFOy59-rFtXM8vf77nyqPbqNIHUJJTRGXyO0KmUq13S1z1Cb9vCEkv23nrYAzf6ke9vzLKKnBO8wPs7T4t5rnsY5BMhrOxnk5azMMJL-Kl_STwhBvvR0g5aqw0DfbPBgTscgDkstK-g57QVj6wx0mRFe6xHZpDuulsaUW72iRXypjgB6av71d98uspDxr9wEOfAG-F1ST9zmvli8zh4H8l8Ss9e6gJGdG5l8PuZXFfIF_eabjCFdtk-M2g" />
+              <button
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300 shadow-sm">
+                <span class="material-symbols-outlined text-primary"
+                  data-icon="add_shopping_cart">add_shopping_cart</span>
+              </button>
+            </div>
+            <div class="text-center">
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-1 ebGaramond">
+                Golden Petal Inlay
+              </h3>
+              <div class="flex justify-center items-center gap-1 mb-2">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" data-icon="star"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant ml-1 beVietnamPro">(124)</span>
+              </div>
+              <p class="font-label-md text-label-md text-primary beVietnamPro">
+                $95.00
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Coming Soon Teaser -->
+    <section class="py-margin-lg bg-secondary-container relative overflow-hidden">
+      <div
+        class="max-w-container-max mx-auto px-margin-md md:px-margin-lg flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2">
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <span
+              class="font-label-md text-label-md text-primary tracking-widest uppercase mb-4 block beVietnamPro">Sneak
+              Peek</span>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface mb-6 ebGaramond">
+              The Velvet Peony Series
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8 beVietnamPro">
+              Our most ambitious collection yet. Deep textures, hand-painted
+              details, and the intoxicating charm of the autumn bloom. Sign up
+              to be the first to know when we drop.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4">
+              <input
+                class="flex-1 bg-surface border-b-2 border-outline-variant focus:border-primary px-4 py-3 outline-none transition-colors font-body-md text-body-md beVietnamPro"
+                placeholder="Enter your email" type="email" />
+              <button
+                class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity beVietnamPro"
+                type="button">
+                Notify Me
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-surface rounded-lg overflow-hidden translate-y-8">
+            <img class="w-full h-full object-cover"
+              data-alt="Artistic close-up of velvet peony petals with soft, moody lighting. The image captures the intricate textures and rich, deep pink and burgundy tones of the flower. The aesthetic is extremely sophisticated and botanical, hinting at a new high-end phone case collection for the ZYVORA brand."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCURl7ZqWMS7Ebk7o6OuVkgmkH0QDDpomTQkTJY9nLnhLAGfpD9KVzX8_8ay2hrk4wWjOlciae4KB9QhTzr0Wqcutvc-b9tYKVlnA0zbFr1zNLSllWRZILSuXvgCtqOmP-392JijP091WL17JQccE9KkxDf8x3zEfqCH5_l9c_1vGQX9XOEY0fCOTv8qi1e04bNLDEC4P0wT-VKwCYiN5d_eaveI2FlhqtyvciOBgeLyP5O_OxOgg6vZRcqR12RpKbYvCm1QkOuXQ0" />
+          </div>
+          <div class="aspect-square bg-surface rounded-lg overflow-hidden">
+            <img class="w-full h-full object-cover"
+              data-alt="A blurred, ethereal image of a craftsman's hands delicately placing a dried flower onto a transparent surface. The workspace is filled with botanical fragments and artisanal tools. The lighting is warm and golden, evoking a sense of handcrafted luxury and premium boutique production."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN8NGMpzUOyvFKHJ6dazpyFMyRyTNVNXmuWjGS8elmzUh7-j2mySSin7ci81AyigJtwxIY8U9rsClwPyX1JXD8CnXP8HlYwa19rMubiLnxKi7hI2TqiLlCqkTZwm7Vv-kFWSBrEwK5UFFjkMz1V5C2eSbh5mE0DFw8kyl4zEsqHkfvU9gQrqml968Mky95AEoYQWTOJI1Mx_pv7beUS5VWGRaMABhYPQ4YT35Pam65HcfmZxPq5jNJUP7siaiLpqsFV4h7BeDRCMM" />
+          </div>
+        </div>
+      </div>
+      <!-- Background Decorative Element -->
+      <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+        <span class="material-symbols-outlined text-[300px] text-primary"
+          style="font-variation-settings: &quot;wght&quot; 100">local_florist</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary-container dark:bg-tertiary-container full-width bottom">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-md md:px-margin-lg py-margin-md max-w-container-max mx-auto">
+      <div class="md:col-span-1">
+        <a class="font-headline-md text-headline-md text-primary mb-6 block" href="index.html">ZYVORA</a>
+        <p class="font-body-md text-on-secondary-container/80 mb-6"><i>"Present for those of you who like to
+            look stylish without forgetting protection for your <br> smartphone!"</i></p>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Shop</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="catalog.html">All Collections</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="newarrival.html">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Company</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="about.html">Our Story</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="https://www.whatsapp.com/download">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">Privacy Policy</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">Shipping &amp; Returns</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-6 border-t border-outline-variant/20 text-center">
+      <p class="font-label-sm text-label-sm text-on-secondary-container/60">
+        © 2024 ZYVORA Artisanal Cases. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = menuBtn ? menuBtn.querySelector('.material-symbols-outlined') : null;
+
+      if (menuBtn && mobileMenu && menuIcon) {
+        menuBtn.addEventListener('click', () => {
+          const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+          if (!isOpen) {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            menuIcon.textContent = 'close';
+          } else {
+            mobileMenu.style.maxHeight = '0px';
+            menuIcon.textContent = 'menu';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

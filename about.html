@@ -1,0 +1,558 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About ZYVORA | About Main</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-headline-xl {
+        font-family: "EB Garamond", serif;
+      }
+      .font-headline-lg {
+        font-family: "EB Garamond", serif;
+      }
+      .font-headline-md {
+        font-family: "EB Garamond", serif;
+      }
+      .font-body-lg {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .font-body-md {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .font-label-md {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .font-label-sm {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#8c716e",
+              "on-tertiary-container": "#d5a500",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f3f4",
+              "primary-fixed": "#ffdad6",
+              "surface-container": "#eeeeee",
+              "primary-container": "#801212",
+              "on-error": "#ffffff",
+              surface: "#f9f9f9",
+              tertiary: "#362800",
+              "primary-fixed-dim": "#ffb4ab",
+              "secondary-container": "#ecdcdc",
+              "tertiary-fixed": "#ffdf96",
+              "on-surface-variant": "#58413f",
+              "on-surface": "#1a1c1c",
+              "surface-variant": "#e2e2e2",
+              "on-primary-fixed": "#410002",
+              "on-background": "#1a1c1c",
+              "on-primary-container": "#ff8a7e",
+              "on-secondary-fixed": "#22191a",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#513d00",
+              primary: "#5c0004",
+              error: "#ba1a1a",
+              "secondary-fixed": "#efdfdf",
+              "secondary-fixed-dim": "#d2c3c3",
+              "surface-dim": "#dadada",
+              "outline-variant": "#e0bfbb",
+              "inverse-primary": "#ffb4ab",
+              "on-tertiary-fixed": "#251a00",
+              "tertiary-fixed-dim": "#f6bf00",
+              "surface-container-highest": "#e2e2e2",
+              "inverse-on-surface": "#f0f1f1",
+              background: "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f9f9f9",
+              "on-secondary-fixed-variant": "#4f4445",
+              "surface-container-high": "#e8e8e8",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#594400",
+              "on-secondary-container": "#6c6060",
+              "inverse-surface": "#2f3131",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#675c5c",
+              "on-primary-fixed-variant": "#8a1a18",
+              "surface-tint": "#ab332d",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-md": "2.5rem",
+              gutter: "1.5rem",
+              "margin-xs": "1rem",
+              "container-max": "1280px",
+              "margin-lg": "5rem",
+            },
+            fontFamily: {
+              "body-md": ["Be Vietnam Pro"],
+              "headline-xl": ["EB Garamond"],
+              "headline-md": ["EB Garamond"],
+              "headline-lg": ["EB Garamond"],
+              "body-lg": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["EB Garamond"],
+              "label-sm": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "1.2", fontWeight: "500" },
+              ],
+              "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  
+  <body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <header
+      class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin-md md:px-margin-lg py-4 max-w-container-max mx-auto"
+      >
+        <!-- Logo -->
+        <a
+          class="font-headline-lg text-headline-lg tracking-widest text-primary hover:opacity-80 transition-opacity"
+          href="index.html"
+        >
+          ZYVORA
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="catalog.html"
+          >
+            Shop
+          </a>
+
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="newarrival.html"
+          >
+            New Arrivals
+          </a>
+
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="about.html"
+          >
+            Our Story
+          </a>
+        </nav>
+
+        <!-- Right Icons -->
+        <div class="flex items-center gap-6">
+          <a href="cart.html" class="hover:opacity-80 transition-opacity flex items-center">
+            <span class="material-symbols-outlined text-on-surface-variant">
+              shopping_bag
+            </span>
+          </a>
+
+          <a href="#" class="hover:opacity-80 transition-opacity flex items-center">
+            <span class="material-symbols-outlined text-on-surface-variant">
+              person
+            </span>
+          </a>
+
+          <!-- Burger Button -->
+          <button
+            id="menu-btn"
+            class="md:hidden flex items-center"
+          >
+            <span class="material-symbols-outlined text-on-surface-variant text-3xl">
+              menu
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[999] bg-white/20 backdrop-blur-xl hidden md:hidden transition-all duration-300">
+      <div class="flex flex-col h-full p-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-12">
+          <a class="font-headline-lg text-headline-lg tracking-widest text-primary"href="index.html">ZYVORA</a>
+
+          <button id="close-menu-btn">
+            <span class="material-symbols-outlined text-primary text-4xl">
+              close
+            </span>
+          </button>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex flex-col gap-6 text-center mt-12">
+          <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20"href="catalog.html">
+            Shop
+          </a>
+
+          <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20"
+            href="newarrival.html" >
+            New Arrivals
+          </a>
+
+          <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20"
+            href="about.html" >
+            Our Story
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative h-[716px] flex items-center justify-center overflow-hidden"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            class="w-full h-full object-cover"
+            data-alt="A cinematic, high-resolution photograph of a sun-drenched artisanal workshop. Soft morning light filters through a large window, illuminating delicate botanical arrangements and handcrafted phone cases on a rustic wooden table. The atmosphere is warm, romantic, and sophisticated, dominated by rich burgundy tones and soft creamy whites, capturing the boutique essence of the brand."
+            src="./imgs/about/img-about-background1.jpeg"
+          />
+          <div
+            class="absolute inset-0 bg-primary/20 backdrop-brightness-75"
+          ></div>
+        </div>
+        <div
+          class="relative z-10 text-center text-on-primary px-margin-md max-w-4xl mx-auto"
+        >
+          <h1 class="font-headline-xl text-headline-xl mb-6 italic">
+            Where Protection Meets Style
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-surface-container-lowest max-w-2xl mx-auto"
+          >
+            ZYVORA is a smartphone accessories brand that combines protection, style, and modern identity. With trendy, clean, and premium designs, ZYVORA is created for a generation that wants to express a stylish lifestyle through every detail of their daily lives.
+          </p>
+        </div>
+      </section>
+      <!-- Our Philosophy -->
+      <section class="py-margin-lg px-margin-md max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div class="relative group">
+            <div
+              class="absolute -top-10 -left-10 w-40 h-40 bg-secondary-container rounded-full -z-10 opacity-50"
+            ></div>
+            <img
+              class="w-full aspect-[4/5] object-cover rounded-lg shadow-sm"
+              data-alt="Close-up detail of skilled hands delicately placing a real pressed flower onto a translucent phone case mold. The lighting is soft and focused, emphasizing the intricate textures of the petals and the precision of the artisan. The color palette is a harmonious blend of deep burgundy, soft pinks, and warm wood tones, conveying a sense of handcrafted luxury and organic beauty."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjQ9bQdR7hEhXAuXxNjCkcy7bMldakj0j3MGyrc5rwgbxaqNUvJ8JMm7RFQuiFoBc2gORcoC2As5X-XijM3jMRyYwMKsgjxsApJfBMPSyET3l1KS2hQJ1JhG4njqMNduvMZUKLr3ksJ_ldUNII1VSEq1Cjj5a-z0rUnSP8epjs17Td6LZagiXwYduH4Dla1TSQ7NrIR7re0gVoWdiK1oDSZE9I7SDMMn9jfc-tfSvDGxZHyDPMKWA1veRQcl-7vqmcBJO8LuXFzXY"
+            />
+          </div>
+          <div class="space-y-8">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">The Meaning Behind ZYVORA</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary">Where Protection Meets Style</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              The name ZYVORA evokes a modern, elegant, and distinctive image. Behind the name lies a philosophy that embodies the brand's identity.
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              <b>Radiance & Brilliance</b><br>
+              The name ZYVORA is inspired by the word "Ziva" or "Ziv," which means light, shine, and brilliance. This philosophy symbolizes how every ZYVORA product is designed to stand out and reflect the wearer's style.
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              <b>Elegant Presence</b><br>
+              The suffix "-vora" adds an exclusive and classy touch. More than just an accessory, ZYVORA is a modern fashion statement that blends with today's lifestyle.
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              <b>Generation & Confidence</b><br>
+              The letter "Z" represents the spirit of the modern generation, which is creative, expressive, and close to technology. Furthermore, "Z" also symbolizes Zenith—the highest point—and symbolizes the highest quality and standards that ZYVORA strives to deliver.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Artisanal History -->
+      <section class="bg-surface-container-low py-margin-lg">
+        <div class="max-w-container-max mx-auto px-margin-md">
+          <div class="text-center mb-16 max-w-2xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4 italic">Our Core Values</h2>
+            <div class="w-12 h-[1px] bg-outline mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300">
+              <span class="font-headline-md text-headline-md text-primary/40 block">01</span>
+              <h3 class="font-label-md text-label-md text-primary">Zestful</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                A fresh, expressive, and energetic design to accompany your daily activities.
+              </p>
+            </div>
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300 border-x border-outline-variant/20">
+              <span class="font-headline-md text-headline-md text-primary/40 block">02</span>
+              <h3 class="font-label-md text-label-md text-primary">Vogue</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Following modern trends with a stylish and timeless look.
+              </p>
+            </div>
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300">
+              <span class="font-headline-md text-headline-md text-primary/40 block">03</span>
+              <h3 class="font-label-md text-label-md text-primary">Radiant</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Presenting details that make users appear more confident and stand out.
+              </p>
+            </div>
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300">
+              <span class="font-headline-md text-headline-md text-primary/40 block">04</span>
+              <h3 class="font-label-md text-label-md text-primary">Our Vision</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                To become a smartphone accessory brand that not only protects devices but also becomes part of a modern identity and lifestyle. <br>
+              </p>
+            </div>
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300">
+              <span class="font-headline-md text-headline-md text-primary/40 block">05</span>
+              <h3 class="font-label-md text-label-md text-primary">Vision</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                To become a premium gadget accessory brand that combines technology, protection, and futuristic design for the global market.
+              </p>
+            </div>
+            <div class="bg-surface p-8 rounded-lg space-y-4 hover:bg-white transition-all duration-300">
+              <span class="font-headline-md text-headline-md text-primary/40 block">06</span>
+              <h3 class="font-label-md text-label-md text-primary">Mission</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                <ul>
+                  <li>Create premium products with modern designs.</li>
+                  <li>Provide protection with elegant aesthetics.</li>
+                  <li>Become a symbol of the modern digital lifestyle.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Sustainability & Materials -->
+      <section class="py-margin-lg px-margin-md max-w-container-max mx-auto overflow-hidden">
+        <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+          <div class="relative w-full md:w-1/2">
+            <img
+              class="w-full aspect-video object-cover rounded-lg"
+              data-alt="An ethereal, wide-angle shot of a sustainable flower meadow at dawn. Mist clings to the ground while soft sunlight illuminates a vibrant array of wildflowers. The scene is tranquil and lush, with a natural color palette of deep greens and earthy tones, reflecting the brand's commitment to ethical sourcing and environmental stewardship. The mood is serene and hopeful."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr11__ev4RYaJx3-iTCx1CV-d82klYkrbi7BzBD-6T9InCe9VvozSqWzcjkXekI53qPoqTA_mmB88EVqvzr_9v6y_5QSxZkuf_yROURto7SyI728ab1sduQYRLQUurl7aMZFl5O0xxyQ-G1o86Ulvz99aoXXn8jaBOii-Ehyo1c-VZDcem7YTu46y_q9c8sQk5JVAlqpvSMeKMdZD-XufUsf9MyG02kfLJbiuewfbjP59CG75B2NNEEVxFbb08Hmbq3CU9XOG8ITU"
+            />
+            <div class="absolute -bottom-6 -left-6 bg-secondary-container p-6 rounded-lg hidden md:block">
+              <p class="font-label-md text-label-md text-primary">
+                Full Heart, Full Beauty
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 space-y-6">
+            <h2 class="font-headline-lg text-headline-lg text-primary"><i>"Where Protection Meets Style"</i></h2>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              We're here for those who love a stylish look without forgetting smartphone protection. With modern, clean, and trendy designs, we offer a variety of accessories, including clear cases, soft cases, hard cases, lanyards, and phone straps, designed to complement your everyday look.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1" data-icon="eco">eco</span>
+                <div>
+                  <h4 class="font-label-md text-label-md text-primary">Because for ZYVORA,</h4>
+                  <p class="text-on-surface-variant text-sm">
+                    smartphones are not just a communication tool but also a part of style.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section class="py-margin-lg bg-surface-container px-margin-md">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-headline-lg text-headline-lg text-primary italic">
+              The Founders
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="bg-surface-container-lowest p-10 space-y-6 rounded-lg">
+              <p class="font-body-md text-body-md italic text-on-surface">
+                "A great brand is not only seen, but also remembered. It's more than a product — experience that connects with people through beauty, emotion, and authenticity."
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  class="w-12 h-12 rounded-full object-cover"
+                  data-alt="A portrait of a young woman with a warm, genuine smile. The background is a soft-focus interior with warm, natural lighting. Her style is elegant and minimalist, aligning with the ZYVORA brand aesthetic. The overall mood is one of trust and satisfaction, with a high-key, airy finish."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfNR4XnR0jzylS8M4Dex50q18TqBt7jlqlZf6arbLj4-o6-M70XHua1tW_-FWyGJxk3qVPpaGA7yECkXwi27l8aeIcWuPFowK4luKh49scyBQeARGjJ-owAa9uujSfKI2IB7a98YANEtkxlPeNkd97HMUQjlIQynOk-eO3-_2IQFBlWh33KkMWjlO1sRLvWWqS3-Io9le0rrJcCtbg81CBXlCg4JvBK_KTpkOzNqxsD5XdDnp9-eANGSpb-G2U7Ydo11gXHJmDdLo"
+                />
+                <div>
+                  <p class="font-label-md text-label-md text-primary">
+                    Pricilla Kenia
+                  </p>
+                  <p class="text-xs text-on-surface-variant">Vice of Promotion and Marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest p-10 space-y-6 rounded-lg">
+              <p class="font-body-md text-body-md italic text-on-surface">"Every message carries meaning. Through communication and creativity, Product to inspire confidence, elegance, and a sense of connection in every interaction."</p>
+              <div class="flex items-center gap-4">
+                <img
+                  class="w-12 h-12 rounded-full object-cover"
+                  data-alt="A portrait of a man in his early 30s with a sophisticated yet approachable appearance. The lighting is soft and golden, suggesting a late afternoon sun. He is wearing a high-quality linen shirt, echoing the artisanal and organic themes of the brand. The photo feels authentic and professional."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS5heBuJIC9Qg0fxywTDX0iWwQ9RraSsDDq9j3PevdWWIhBgwAkv1DUlTtss00ECSk57kBTGG08hcK9ShGRZOikp4p67L5Hjz9rm1XHiktc15cj3_aWNa7YszVE7lMNunN5traJ1JrElkxTzqC2ixvMA75_Vxw3-VeyXxPmFqXMXYmfDqogWBbh9klHy-e6SZ_GIptrJbv-PAdh721j-ZtWYkYwlznI7ZIlkuSAo5Ui553iosUfZEO1HEcU0VYlHbx3hOuJJIQYkU"
+                />
+                <div>
+                  <p class="font-label-md text-label-md text-primary">
+                    Dushe Maria Carolina
+                  </p>
+                  <p class="text-xs text-on-surface-variant">Vice of Advertisement and communication</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest p-10 space-y-6 rounded-lg">
+              <p class="font-body-md text-body-md italic text-on-surface">
+                "People is the key to meaningful innovation. We continuously study trends and customer needs to create designs that remain timeless, relevant, and impactful."
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  class="w-12 h-12 rounded-full object-cover"
+                  data-alt="A serene portrait of a woman with a calm and refined expression. The lighting is diffused and cool-toned, creating a modern, minimalist feel. The background is a clean white wall, allowing her natural features and the soft burgundy color of her accessory to stand out. The image conveys quality and elegance."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXeZkvvP4cBUyzdd8DverKhIDlHoWhXnxQR6WJO5PnDOd1Mt8XTzFx9ZBzyiOdalTRWadTLg6c3mDZCB1yF1qUkvgsCjqerLgwbZWiiSmUhYaFLLUN4aGAgRDGqhBImOrZgKQXMFxBY8rvIcVtwRMQkqftoEiJ0LpOo5_ef8neLS9Y7pZRdB3Nu-23N00GCLlhVFJldXi_I6Vgb7ZkKi8iJ-wbSE_YKi_GyQqzpjIpYNEtTWp8qU0ox6Yo5XjP1b16ariD1QU2Hgc"
+                />
+                <div>
+                  <p class="font-label-md text-label-md text-primary">
+                    Sabilah Azzahra
+                  </p>
+                  <p class="text-xs text-on-surface-variant">Vice of Market Analyzing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-margin-lg px-margin-md text-center max-w-4xl mx-auto">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-6 italic">
+          What are you waiting for?
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-10">
+          Discover our lovingly crafted collection and find the one that suits your style.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all uppercase tracking-widest"
+            href="catalog.html">Shop Collection</a>
+          <a
+            class="border border-primary text-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest"
+            href="https://www.whatsapp.com/download">Contact us</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-container dark:bg-tertiary-container full-width bottom">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-md md:px-margin-lg py-margin-md max-w-container-max mx-auto">
+            <div class="md:col-span-2">
+                <a class="font-headline-md text-headline-md text-primary mb-6 block" href="index.html">ZYVORA</a>
+                <p class="font-body-md text-on-secondary-container/80 mb-6"><i>"Present for those of you who like to look stylish without forgetting protection for your smartphone!"</i></p>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="catalog.html">All Collections</a></li>
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="newarrival.html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Company</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="about.html">Our Story</a></li>
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="https://www.whatsapp.com/download">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-6 border-t border-outline-variant/20 text-center">
+            <p class="font-label-sm text-label-sm text-on-secondary-container/60">© 2026 ZYVORA Cases. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      // Open menu
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+      });
+
+      // Close menu
+      closeMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+      });
+
+      // Close when click outside
+      mobileMenu.addEventListener("click", (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+      });
+    </script>
+
+  </body>
+</html>

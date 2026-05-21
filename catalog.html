@@ -1,0 +1,522 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>ZYVORA | Shop Collections</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#8c716e",
+              "on-tertiary-container": "#d5a500",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f3f4",
+              "primary-fixed": "#ffdad6",
+              "surface-container": "#eeeeee",
+              "primary-container": "#801212",
+              "on-error": "#ffffff",
+              surface: "#f9f9f9",
+              tertiary: "#362800",
+              "primary-fixed-dim": "#ffb4ab",
+              "secondary-container": "#ecdcdc",
+              "tertiary-fixed": "#ffdf96",
+              "on-surface-variant": "#58413f",
+              "on-surface": "#1a1c1c",
+              "surface-variant": "#e2e2e2",
+              "on-primary-fixed": "#410002",
+              "on-background": "#1a1c1c",
+              "on-primary-container": "#ff8a7e",
+              "on-secondary-fixed": "#22191a",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#513d00",
+              primary: "#5c0004",
+              error: "#ba1a1a",
+              "secondary-fixed": "#efdfdf",
+              "secondary-fixed-dim": "#d2c3c3",
+              "surface-dim": "#dadada",
+              "outline-variant": "#e0bfbb",
+              "inverse-primary": "#ffb4ab",
+              "on-tertiary-fixed": "#251a00",
+              "tertiary-fixed-dim": "#f6bf00",
+              "surface-container-highest": "#e2e2e2",
+              "inverse-on-surface": "#f0f1f1",
+              background: "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f9f9f9",
+              "on-secondary-fixed-variant": "#4f4445",
+              "surface-container-high": "#e8e8e8",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#594400",
+              "on-secondary-container": "#6c6060",
+              "inverse-surface": "#2f3131",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#675c5c",
+              "on-primary-fixed-variant": "#8a1a18",
+              "surface-tint": "#ab332d",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-md": "2.5rem",
+              gutter: "1.5rem",
+              "margin-xs": "1rem",
+              "container-max": "1280px",
+              "margin-lg": "5rem",
+            },
+            fontFamily: {
+              "body-md": ["Be Vietnam Pro"],
+              "headline-xl": ["EB Garamond"],
+              "headline-md": ["EB Garamond"],
+              "headline-lg": ["EB Garamond"],
+              "body-lg": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["EB Garamond"],
+              "label-sm": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "1.2", fontWeight: "500" },
+              ],
+              "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      body {
+        background-color: #f9f9f9;
+        color: #1a1c1c;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #8c716e;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body class="font-body-md text-body-md">
+    <!-- TopNavBar -->
+    <header class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md docked full-width top-0 sticky border-b border-outline-variant/30 dark:border-outline/20 z-50 transition-all duration-300">
+      <div
+        class="flex justify-between items-center w-full px-margin-md md:px-margin-lg py-4 max-w-container-max mx-auto"
+      >
+        <a
+          class="font-headline-lg text-headline-lg tracking-widest text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity"
+          href="index.html"
+        >
+          ZYVORA
+        </a>
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="catalog.html">
+            Shop</a>
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="newarrival.html">
+            New Arrivals</a>
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="about.html">
+            Our Story</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="cart.html"
+            class="hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out flex items-center"
+          >
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="shopping_bag"
+              >shopping_bag</span
+            >
+          </a>
+          <a href="#"
+            class="hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out flex items-center"
+          >
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="person"
+              >person</span
+            >
+          </a>
+          <button id="menu-btn" class="md:hidden flex items-center hover:opacity-80 transition-opacity focus:outline-none">
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="menu"
+              >menu</span
+            >
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Slider -->
+      <div id="mobile-menu" class="max-h-0 overflow-hidden md:hidden bg-surface/95 backdrop-blur-lg border-t border-outline-variant/20 transition-all duration-300 ease-in-out">
+          <div class="flex flex-col px-margin-md py-6 gap-4">
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="catalog.html">Shop</a>
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="newarrival.html">New Arrivals</a>
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" href="about.html">Our Story</a>
+          </div>
+      </div>
+    </header>
+    
+    <main class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-margin-md">
+      <!-- Hero Section Header -->
+      <header class="mb-12">
+        <h1 class="font-headline-xl text-headline-xl text-primary mb-4">Where Protection Meets Style</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Discover our selection of the best phone cases, where attractive design and craftsmanship combine with modern technology.
+        </p>
+      </header>
+      
+      <div class="flex flex-col md:flex-row gap-gutter">
+        <!-- Filter Sidebar -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+          <div class="sticky top-24 space-y-8">
+            <!-- Sorting Dropdown Mobile/Desktop -->
+            <div class="block">
+              <label class="font-label-md text-label-md text-primary mb-3 block">SORT BY DESIGN</label>
+              <select class="w-full bg-transparent border-b border-outline py-2 font-body-md focus:outline-none focus:border-primary appearance-none cursor-pointer">
+                <option>None</option>
+                <option>Clear Case</option>
+                <option>Hard Case</option>
+                <option>Soft Case</option>
+                <option>Lanyard Case</option>
+                <option>Phone Strap</option>
+              </select>
+            </div>
+            <!-- Filter Groups -->
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-label-md text-label-md text-primary mb-4">PHONE MODEL</h3>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary rounded-sm" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Clear Case</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary rounded-sm" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Hard Case</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary rounded-sm" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Soft Case</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary rounded-sm" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Lanyard Case</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary rounded-sm" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Phone Strap</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-label-md text-label-md text-primary mb-4">MATERIAL</h3>
+                <div class="flex flex-wrap gap-2">
+                  <button class="px-3 py-1.5 rounded-full bg-secondary-container text-primary font-label-sm text-label-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                    Clear Case
+                  </button>
+                  <button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-all">
+                    Hard Case
+                  </button>
+                  <button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-all">
+                    Soft Case
+                  </button>
+                  <button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-all">
+                    Lanyard Case
+                  </button>
+                  <button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-all">
+                    Phone Strap
+                  </button>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-label-md text-label-md text-primary mb-4">TYPE</h3>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary" name="style" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Case</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="w-4 h-4 border-outline text-primary focus:ring-primary" name="style" type="radio"/>
+                    <span class="text-on-surface-variant group-hover:text-primary transition-colors">Accessories</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="flex-grow">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/clear.jpg"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="bg-primary px-3 py-1 text-white font-label-sm text-label-sm uppercase tracking-wider">New</span>
+                </div>
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Original Clear Case</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp85.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/Blue boo bear.jpg"
+                />
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Blue Boo Bear</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp85.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/Daisy Puppy.jpg"
+                />
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Daisy Puppy</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp115.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/Velvet Bunny.jpg"
+                />
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Velvet Bunny</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp110.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/Blue boo bear.jpg"
+                />
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Blue Boo Bear</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp85.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="group cursor-pointer">
+              <div class="aspect-[4/5] bg-surface-container mb-4 overflow-hidden relative">
+                <img alt="Clear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="A premium rose gold leather iPhone case resting on a soft velvet surface surrounded by delicate dried roses. The lighting is warm and cinematic, highlighting the fine texture of the handcrafted leather. The overall mood is romantic and sophisticated, utilizing a palette of deep burgundy and soft pinks."
+                  src="./product/Casing/Clear case/Blue boo bear.jpg"
+                />
+              </div>
+              <div class="text-center px-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Blue Boo Bear</h3>
+                <p class="font-body-md text-on-surface-variant mb-2">Rp85.000</p>
+                <div class="flex justify-center items-center gap-1 text-on-tertiary-container">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                  <span class="text-label-sm font-label-sm text-on-surface-variant ml-1">(48)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="mt-16 flex justify-center items-center gap-4">
+            <button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md bg-primary-container text-on-primary-container rounded-sm">1</button>
+            <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">2</button>
+            <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">3</button>
+
+            <span class="text-on-surface-variant">...</span>
+
+            <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">12</button>
+            <button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-secondary-container dark:bg-tertiary-container full-width bottom">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-md md:px-margin-lg py-margin-md max-w-container-max mx-auto">
+            <div class="md:col-span-2">
+                <a class="font-headline-md text-headline-md text-primary mb-6 block" href="index.html">ZYVORA</a>
+                <p class="font-body-md text-on-secondary-container/80 mb-6"><i>"Present for those of you who like to look stylish without forgetting protection for your smartphone!"</i></p>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="catalog.html">All Collections</a></li>
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="newarrival.html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Company</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="about.html">Our Story</a></li>
+                    <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+                            href="https://www.whatsapp.com/download">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-6 border-t border-outline-variant/20 text-center">
+            <p class="font-label-sm text-label-sm text-on-secondary-container/60">© 2026 ZYVORA Cases. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuBtn ? menuBtn.querySelector('.material-symbols-outlined') : null;
+
+            if (menuBtn && mobileMenu && menuIcon) {
+                menuBtn.addEventListener('click', () => {
+                    const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+                    if (!isOpen) {
+                        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                        menuIcon.textContent = 'close';
+                    } else {
+                        mobileMenu.style.maxHeight = '0px';
+                        menuIcon.textContent = 'menu';
+                    }
+                });
+            }
+        });
+    </script>
+  </body>
+</html>

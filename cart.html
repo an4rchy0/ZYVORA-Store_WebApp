@@ -1,0 +1,714 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#8c716e",
+              "on-tertiary-container": "#d5a500",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f3f4",
+              "primary-fixed": "#ffdad6",
+              "surface-container": "#eeeeee",
+              "primary-container": "#801212",
+              "on-error": "#ffffff",
+              surface: "#f9f9f9",
+              tertiary: "#362800",
+              "primary-fixed-dim": "#ffb4ab",
+              "secondary-container": "#ecdcdc",
+              "tertiary-fixed": "#ffdf96",
+              "on-surface-variant": "#58413f",
+              "on-surface": "#1a1c1c",
+              "surface-variant": "#e2e2e2",
+              "on-primary-fixed": "#410002",
+              "on-background": "#1a1c1c",
+              "on-primary-container": "#ff8a7e",
+              "on-secondary-fixed": "#22191a",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#513d00",
+              primary: "#5c0004",
+              error: "#ba1a1a",
+              "secondary-fixed": "#efdfdf",
+              "secondary-fixed-dim": "#d2c3c3",
+              "surface-dim": "#dadada",
+              "outline-variant": "#e0bfbb",
+              "inverse-primary": "#ffb4ab",
+              "on-tertiary-fixed": "#251a00",
+              "tertiary-fixed-dim": "#f6bf00",
+              "surface-container-highest": "#e2e2e2",
+              "inverse-on-surface": "#f0f1f1",
+              background: "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f9f9f9",
+              "on-secondary-fixed-variant": "#4f4445",
+              "surface-container-high": "#e8e8e8",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#594400",
+              "on-secondary-container": "#6c6060",
+              "inverse-surface": "#2f3131",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#675c5c",
+              "on-primary-fixed-variant": "#8a1a18",
+              "surface-tint": "#ab332d",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-md": "2.5rem",
+              gutter: "1.5rem",
+              "margin-xs": "1rem",
+              "container-max": "1280px",
+              "margin-lg": "5rem",
+            },
+            fontFamily: {
+              "body-md": ["Be Vietnam Pro"],
+              "headline-xl": ["EB Garamond"],
+              "headline-md": ["EB Garamond"],
+              "headline-lg": ["EB Garamond"],
+              "body-lg": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["EB Garamond"],
+              "label-sm": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "1.2", fontWeight: "500" },
+              ],
+              "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-on-background">
+    <!-- TopNavBar -->
+    <header
+      class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin-md md:px-margin-lg py-4 max-w-container-max mx-auto"
+      >
+        <a
+          class="font-headline-lg text-headline-lg tracking-widest text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity"
+          href="index.html"
+        >
+          ZYVORA
+        </a>
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="catalog.html">
+            Shop</a>
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="newarrival.html">
+            New Arrivals</a>
+          <a
+            class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors"
+            href="about.html">
+            Our Story</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="hover:opacity-80 transition-opacity flex items-center">
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="shopping_bag"
+              >shopping_bag</span
+            >
+          </a>
+          <a href="#" class="hover:opacity-80 transition-opacity flex items-center">
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="person"
+              >person</span
+            >
+          </a>
+          <button id="menu-btn" class="md:hidden flex items-center hover:opacity-80 transition-opacity focus:outline-none">
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="menu"
+              >menu</span
+            >
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Slider -->
+      <div id="mobile-menu" class="max-h-0 overflow-hidden md:hidden bg-surface/95 backdrop-blur-lg border-t border-outline-variant/20 transition-all duration-300 ease-in-out">
+          <div class="flex flex-col px-margin-md py-6 gap-4">
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="catalog.html">Shop</a>
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="newarrival.html">New Arrivals</a>
+              <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" href="about.html">Our Story</a>
+          </div>
+      </div>
+    </header>
+    <main
+      class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-12"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Left Column: Shopping Bag Items -->
+        <div class="lg:col-span-7">
+          <div class="flex items-baseline justify-between mb-8">
+            <h1 class="font-headline-xl text-headline-xl text-primary">
+              Your Bag
+            </h1>
+            <p class="font-label-md text-label-md text-on-secondary-container">
+              (3 Items)
+            </p>
+          </div>
+          <div class="space-y-6">
+            <!-- Item 1 -->
+            <div class="flex gap-6 pb-6 border-b border-outline-variant/30">
+              <div
+                class="w-32 h-40 bg-secondary-container rounded overflow-hidden flex-shrink-0"
+              >
+                <img
+                  alt="Artisanal Case"
+                  class="w-full h-full object-cover"
+                  data-alt="Close up photography of an artisanal floral smartphone case with real pressed dried burgundy flowers embedded in a clear resin. The lighting is soft and romantic, casting gentle shadows across a clean white marble background to evoke a sense of high-end boutique luxury. The colors are dominated by deep reds and neutral tones."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLjXhaGL7EtvrXg_E1vlCgSYwLOBp1LOTiCeblPrkm63tpkDkU2S7N3wFAs5eGVAP3_uFpptwIJfmrB0qzYqMBqhI0L_FTQhRtb04ugiwXH2cf9dgrNLuoaZMIEiGu_7uO4obBVQJuKT19NPOr7vq8I0bi8vRyB0hoT_bjeKvTd7BGbeaTLnu6Vi6wvpNPpEPofZn9nOs5kjl82IRvTqMYYceRUDbV9zGkDKhB0v7Hxzp1jaTNYRv--dUTQIxma_yCwTWwuRUwXg"
+                />
+              </div>
+              <div class="flex flex-col justify-between py-2 w-full">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Midnight Bloom Case
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-wider mt-1"
+                    >
+                      iPhone 15 Pro / Burgundy
+                    </p>
+                  </div>
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >$68.00</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div
+                    class="flex items-center border border-outline-variant rounded-lg px-2 py-1"
+                  >
+                    <button class="px-2 hover:text-primary transition-colors">
+                      −
+                    </button>
+                    <span class="px-4 font-label-md">1</span>
+                    <button class="px-2 hover:text-primary transition-colors">
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="text-on-secondary-container hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px]"
+                      data-icon="delete"
+                      >delete</span
+                    >
+                    <span class="font-label-sm text-label-sm">Remove</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex gap-6 pb-6 border-b border-outline-variant/30">
+              <div
+                class="w-32 h-40 bg-secondary-container rounded overflow-hidden flex-shrink-0"
+              >
+                <img
+                  alt="Golden Petal Case"
+                  class="w-full h-full object-cover"
+                  data-alt="Exquisite botanical illustration of a gold-leafed floral pattern on a luxury smartphone case against a soft pink backdrop. The image is captured with professional macro lenses, highlighting the tactile texture of the golden accents and the fine lines of the petals. The atmosphere is warm, feminine, and sophisticated, consistent with an artisanal brand identity."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMyjPz47m8LowgMf_s6WmijnDYfMqwW9Hy6T9YyAAnRdSsJWE8vBoxhoDihAHHmgjoz2EiqgYM0-X1Yd29eU2Pb0g5ELWAXUC-3Zz4QHQ7cR13SGVPBImN4y6C_ml_kzktA-685UtH-PNEGiEVJPTlQ96Bkb-9ZAQBhiIOQLkH7qcRDAkDamkAWdZvLOi5ltajfB0Xu_KW7QtCFhxuVI4mh7T-HHbuG1jVMdfU-RRFRdyT19vH8viTtrvpYYeuQMtpBkzcbOSWjc"
+                />
+              </div>
+              <div class="flex flex-col justify-between py-2 w-full">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Golden Petal Inlay
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-wider mt-1"
+                    >
+                      iPhone 14 / Gold Leaf
+                    </p>
+                  </div>
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >$85.00</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div
+                    class="flex items-center border border-outline-variant rounded-lg px-2 py-1"
+                  >
+                    <button class="px-2 hover:text-primary transition-colors">
+                      −
+                    </button>
+                    <span class="px-4 font-label-md">1</span>
+                    <button class="px-2 hover:text-primary transition-colors">
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="text-on-secondary-container hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px]"
+                      data-icon="delete"
+                      >delete</span
+                    >
+                    <span class="font-label-sm text-label-sm">Remove</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Promo Code -->
+          <div class="mt-12 p-8 bg-surface-container-low rounded-xl">
+            <h4 class="font-label-md text-label-md text-on-surface mb-4">
+              Have a promo code?
+            </h4>
+            <div class="flex gap-4">
+              <input
+                class="flex-grow bg-white border-b border-outline-variant px-4 py-2 focus:outline-none focus:border-primary font-body-md transition-all"
+                placeholder="Enter code"
+                type="text"
+              />
+              <button
+                class="px-8 py-2 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg hover:opacity-90 transition-all active:scale-95"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Checkout Sidebar -->
+        <div class="lg:col-span-5">
+          <div
+            class="sticky top-24 bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20"
+          >
+            <h2
+              class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant/30 pb-4"
+            >
+              Order Summary
+            </h2>
+            <!-- Steps Indicator -->
+            <div class="flex justify-between mb-8 relative">
+              <div
+                class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"
+              ></div>
+              <div class="flex flex-col items-center gap-2 bg-white px-2">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md"
+                >
+                  1
+                </div>
+                <span class="font-label-sm text-label-sm text-primary"
+                  >Shipping</span
+                >
+              </div>
+              <div class="flex flex-col items-center gap-2 bg-white px-2">
+                <div
+                  class="w-8 h-8 rounded-full border border-outline-variant text-on-secondary-container flex items-center justify-center font-label-md"
+                >
+                  2
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container"
+                  >Payment</span
+                >
+              </div>
+              <div class="flex flex-col items-center gap-2 bg-white px-2">
+                <div
+                  class="w-8 h-8 rounded-full border border-outline-variant text-on-secondary-container flex items-center justify-center font-label-md"
+                >
+                  3
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container"
+                  >Review</span
+                >
+              </div>
+            </div>
+            <!-- Breakdown -->
+            <div class="space-y-4 mb-8">
+              <div
+                class="flex justify-between font-body-md text-on-secondary-container"
+              >
+                <span>Subtotal</span>
+                <span>$153.00</span>
+              </div>
+              <div
+                class="flex justify-between font-body-md text-on-secondary-container"
+              >
+                <span>Shipping</span>
+                <span
+                  class="text-tertiary-container font-bold uppercase tracking-wide"
+                  >Calculated in next step</span
+                >
+              </div>
+              <div
+                class="flex justify-between font-body-md text-on-secondary-container"
+              >
+                <span>Estimated Tax</span>
+                <span>$12.45</span>
+              </div>
+              <div
+                class="pt-4 border-t border-outline-variant/30 flex justify-between"
+              >
+                <span class="font-headline-md text-headline-md text-on-surface"
+                  >Total</span
+                >
+                <span class="font-headline-md text-headline-md text-primary"
+                  >$165.45</span
+                >
+              </div>
+            </div>
+            <!-- Action -->
+            <button
+              class="w-full py-5 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg shadow-lg hover:opacity-95 transition-all active:scale-[0.98] flex items-center justify-center gap-3"
+            >
+              <span
+                class="material-symbols-outlined"
+                data-icon="lock"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >lock</span
+              >
+              Secure Checkout
+            </button>
+            <!-- Trust Badges -->
+            <div class="mt-8 grid grid-cols-2 gap-4">
+              <div
+                class="flex items-center gap-2 p-3 bg-surface-container rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="verified_user"
+                  >verified_user</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container"
+                  >Secure SSL</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2 p-3 bg-surface-container rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="local_shipping"
+                  >local_shipping</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container"
+                  >Free Shipping</span
+                >
+              </div>
+            </div>
+            <!-- Additional Help -->
+            <div class="mt-8 text-center">
+              <p
+                class="font-label-sm text-label-sm text-on-secondary-container"
+              >
+                Need help?
+                <a class="text-primary underline font-bold" href="#"
+                  >Contact our boutique staff</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Recommended / Upsell Section (Asymmetric Layout) -->
+      <section class="mt-24">
+        <h2
+          class="font-headline-lg text-headline-lg text-primary mb-12 text-center"
+        >
+          Complete Your Look
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg group cursor-pointer border border-transparent hover:border-outline-variant/20 transition-all"
+          >
+            <div
+              class="aspect-[4/5] bg-secondary-container rounded mb-4 overflow-hidden relative"
+            >
+              <img
+                alt="Accessory"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="An elegant silk charging cable sleeve with intricate floral embroidery, displayed on a soft velvet surface. The lighting is low-key and dramatic, emphasizing the metallic sheen of the thread and the delicate craftsmanship. The color palette features deep burgundy, muted golds, and warm creams, reflecting a high-end artisanal accessory aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNRSj6z6keegNHM5NY6lbwpOoxT6jS7aTO0SzmtROdaEjy-1GRVV-URwkyIbTkjAkcncslYBSCHegxKy-48d6L872FvJaYSeksV5NLk21P5_9e1PLjOPLKdgBMbQqwZ-hlucsEmyZA0s3q6KsOip7kWR8zPfbLox2S5AGa5zlA75n3DmAMeVImRrDlO93IPuQ053LuUSUkuW8krhdLsNFzpR_JDgM4hMqLRGb6t7rxdLc1Lfvx3O-TvdJc___YYdQhwKKkN73D4FY"
+              />
+              <div
+                class="absolute bottom-4 right-4 p-2 bg-white/90 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="add"
+                  >add</span
+                >
+              </div>
+            </div>
+            <p
+              class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest"
+            >
+              Accessory
+            </p>
+            <h3 class="font-headline-md text-headline-md text-on-surface">
+              Silk Floral Cable Wrap
+            </h3>
+            <p class="font-body-md text-primary mt-2">$24.00</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg group cursor-pointer border border-transparent hover:border-outline-variant/20 transition-all"
+          >
+            <div
+              class="aspect-[4/5] bg-secondary-container rounded mb-4 overflow-hidden relative"
+            >
+              <img
+                alt="Strap"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A luxury leather phone strap with dried flower charms encased in miniature glass droplets. The strap is laying across a textured linen cloth with soft afternoon sunlight filtering through a window, creating organic shadows. The overall feel is boutique, handmade, and romantically sophisticated."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6eIg0T0BZGU1x_hKapSiZeRhVNgxiokzjE59vIkADno5qCmt1B_KqD6FAikfBo6JVypcifwQsEOtJgjSpH6LB3KXNccyN54RxC7oBH5AzDODtTegI75KAsnCdnyazK98qgcRhkEcDvM3JDVo7TBQlWBjxdskMjLmr3wiHeNq4XHgHwkUH4K9wh0QBg5Fof5muZotacfuzPGUrsnxzxnXk8QGWlT-9pL5PHvGnLlLYZtqzqTqGebYPqtk2KcoGFbGoQOdwpuxDpGw"
+              />
+              <div
+                class="absolute bottom-4 right-4 p-2 bg-white/90 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="add"
+                  >add</span
+                >
+              </div>
+            </div>
+            <p
+              class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest"
+            >
+              Hardware
+            </p>
+            <h3 class="font-headline-md text-headline-md text-on-surface">
+              Botanical Leather Strap
+            </h3>
+            <p class="font-body-md text-primary mt-2">$35.00</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg group cursor-pointer border border-transparent hover:border-outline-variant/20 transition-all"
+          >
+            <div
+              class="aspect-[4/5] bg-secondary-container rounded mb-4 overflow-hidden relative"
+            >
+              <img
+                alt="Stand"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A minimalist rose-gold phone stand featuring a single stem of a dried flower pressed into its acrylic base. The background is a soft, out-of-focus boutique interior with neutral tones. The lighting is clean and bright, highlighting the sleek metallic finish and the organic beauty of the flower."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZGtcpn0vfCF-7urKnTRLNsg5kJXmNzXiQZU_knSfvEcO1DdNRPLi3-U8N2tUc4tv4s8rm1HPe_2HWbFSv59IU_X3YcCCFbr0cgrHmCEaV9vYb_jsti9eCzvEnqnAlNWjVA6d_w9_x5oodwxkWsurNXdiN3brs3q3Ehh7CVch38WSFB5Fmlzi6Q-FVosPeCXqUu0uLzBXWgjtchU6D3gherWY4lybBNZVAgdKKGJ-0S0rypALpiXaQDpcOmoYDFvjvmb1b5B3HZBE"
+              />
+              <div
+                class="absolute bottom-4 right-4 p-2 bg-white/90 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="add"
+                  >add</span
+                >
+              </div>
+            </div>
+            <p
+              class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest"
+            >
+              Essentials
+            </p>
+            <h3 class="font-headline-md text-headline-md text-on-surface">
+              Artisan Display Stand
+            </h3>
+            <p class="font-body-md text-primary mt-2">$42.00</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-secondary-container dark:bg-tertiary-container full-width bottom"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-md md:px-margin-lg py-margin-md max-w-container-max mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <div
+            class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim mb-4"
+          >
+            ZYVORA
+          </div>
+          <p
+            class="font-body-md text-body-md text-on-secondary-container/80 dark:text-on-tertiary-container/80"
+          >
+            Crafting digital heirlooms with a floral soul.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4
+            class="font-label-md text-label-md text-primary dark:text-tertiary-fixed-dim mb-2 uppercase tracking-widest"
+          >
+            Shop
+          </h4>
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Botanical Cases</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Leather Goods</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Gift Sets</a
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4
+            class="font-label-md text-label-md text-primary dark:text-tertiary-fixed-dim mb-2 uppercase tracking-widest"
+          >
+            Company
+          </h4>
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Our Story</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Sustainability</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Wholesale</a
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4
+            class="font-label-md text-label-md text-primary dark:text-tertiary-fixed-dim mb-2 uppercase tracking-widest"
+          >
+            Support
+          </h4>
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Shipping &amp; Returns</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-secondary-container/80 dark:text-on-tertiary-container/80 hover:text-primary dark:hover:text-tertiary-fixed-dim underline transition-all"
+            href="#"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+      <div
+        class="px-margin-md md:px-margin-lg py-8 border-t border-outline-variant/10 text-center"
+      >
+        <p
+          class="font-label-sm text-label-sm text-on-secondary-container/60 dark:text-on-tertiary-container/60"
+        >
+          © 2024 ZYVORA Artisanal Cases. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuBtn ? menuBtn.querySelector('.material-symbols-outlined') : null;
+
+            if (menuBtn && mobileMenu && menuIcon) {
+                menuBtn.addEventListener('click', () => {
+                    const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+                    if (!isOpen) {
+                        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                        menuIcon.textContent = 'close';
+                    } else {
+                        mobileMenu.style.maxHeight = '0px';
+                        menuIcon.textContent = 'menu';
+                    }
+                });
+            }
+        });
+    </script>
+  </body>
+</html>

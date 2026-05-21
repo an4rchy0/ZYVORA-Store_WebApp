@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <title>ZYVORA | Clear Case</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            outline: "#8c716e",
+            "on-tertiary-container": "#d5a500",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f3f3f4",
+            "primary-fixed": "#ffdad6",
+            "surface-container": "#eeeeee",
+            "primary-container": "#801212",
+            "on-error": "#ffffff",
+            surface: "#f9f9f9",
+            tertiary: "#362800",
+            "primary-fixed-dim": "#ffb4ab",
+            "secondary-container": "#ecdcdc",
+            "tertiary-fixed": "#ffdf96",
+            "on-surface-variant": "#58413f",
+            "on-surface": "#1a1c1c",
+            "surface-variant": "#e2e2e2",
+            "on-primary-fixed": "#410002",
+            "on-background": "#1a1c1c",
+            "on-primary-container": "#ff8a7e",
+            "on-secondary-fixed": "#22191a",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#513d00",
+            primary: "#5c0004",
+            error: "#ba1a1a",
+            "secondary-fixed": "#efdfdf",
+            "secondary-fixed-dim": "#d2c3c3",
+            "surface-dim": "#dadada",
+            "outline-variant": "#e0bfbb",
+            "inverse-primary": "#ffb4ab",
+            "on-tertiary-fixed": "#251a00",
+            "tertiary-fixed-dim": "#f6bf00",
+            "surface-container-highest": "#e2e2e2",
+            "inverse-on-surface": "#f0f1f1",
+            background: "#f9f9f9",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#f9f9f9",
+            "on-secondary-fixed-variant": "#4f4445",
+            "surface-container-high": "#e8e8e8",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-secondary-container": "#6c6060",
+            "inverse-surface": "#2f3131",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            secondary: "#675c5c",
+            "on-primary-fixed-variant": "#8a1a18",
+            "surface-tint": "#ab332d",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            "margin-md": "2.5rem",
+            gutter: "1.5rem",
+            "margin-xs": "1rem",
+            "container-max": "1280px",
+            "margin-lg": "5rem",
+          },
+          fontFamily: {
+            "body-md": ["Be Vietnam Pro"],
+            "headline-xl": ["EB Garamond"],
+            "headline-md": ["EB Garamond"],
+            "headline-lg": ["EB Garamond"],
+            "body-lg": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["EB Garamond"],
+            "label-sm": ["Be Vietnam Pro"],
+          },
+          fontSize: {
+            "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+            "headline-xl": [
+              "48px",
+              {
+                lineHeight: "1.1",
+                letterSpacing: "-0.02em",
+                fontWeight: "500",
+              },
+            ],
+            "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+            "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            "label-md": [
+              "14px",
+              {
+                lineHeight: "1.2",
+                letterSpacing: "0.05em",
+                fontWeight: "600",
+              },
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              { lineHeight: "1.2", fontWeight: "500" },
+            ],
+            "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+  <!-- TopNavBar -->
+  <header class="docked full-width top-0 sticky z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+    <nav class="flex justify-between items-center w-full px-margin-md md:px-margin-lg py-4 max-w-container-max mx-auto">
+      <div class="flex items-center gap-8">
+        <a class="font-headline-lg text-headline-lg tracking-widest text-primary" href="../index.html">ZYVORA</a>
+        <div class="hidden md:flex items-center gap-6">
+          <!-- Shop is active by default as the primary landing intent -->
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="../catalog.html">Shop</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="../newarrival.html">New Arrivals</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="../about.html">Our Story</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
+          data-icon="shopping_bag">shopping_bag</button>
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
+          data-icon="person">person</button>
+        <button id="menu-btn"
+          class="md:hidden material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
+          data-icon="menu">menu</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-50 bg-surface/98 backdrop-blur-lg hidden transition-all duration-300 md:hidden">
+    <div class="flex flex-col h-full p-8">
+      <div class="flex justify-between items-center mb-12">
+        <a class="font-headline-lg text-headline-lg tracking-widest text-primary" href="../index.html">ZYVORA</a>
+        <button id="close-menu-btn" class="material-symbols-outlined text-primary text-3xl">close</button>
+      </div>
+      <div class="flex flex-col gap-6 text-center mt-12">
+        <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 transition-colors"
+          href="../catalog.html">Shop</a>
+        <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 transition-colors"
+          href="../newarrival.html">New Arrivals</a>
+        <a class="font-headline-md text-headline-md text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 transition-colors"
+          href="../about.html">Our Story</a>
+      </div>
+      <div class="mt-auto flex justify-center gap-8 py-6 border-t border-outline-variant/20">
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl"
+          data-icon="shopping_bag">shopping_bag</button>
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl"
+          data-icon="person">person</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-12">
+    <!-- Product Section: Hero Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+      <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-fit">
+        <div class="col-span-2 aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover"
+            data-alt="A premium crystal clear smartphone case emphasizing transparency, sleek minimalist protection, and tactile high-quality build."
+            src="Casing/Clear%20case/clear.jpg" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover"
+            data-alt="A premium clear smartphone case featuring the adorable Blue Boo Bear illustration."
+            src="Casing/Clear%20case/Blue%20boo%20bear.jpg" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover"
+            data-alt="A premium clear smartphone case featuring the cute Daisy Puppy illustration."
+            src="Casing/Clear%20case/Daisy%20Puppy.jpg" />
+        </div>
+        <div class="col-span-2 aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover"
+            data-alt="A premium clear smartphone case featuring the charming Velvet Bunny illustration."
+            src="Casing/Clear%20case/Velvet%20Bunny.jpg" />
+        </div>
+      </div>
+      <!-- Product Details -->
+      <div class="lg:col-span-5 flex flex-col gap-8 sticky top-28 h-fit">
+        <div>
+          <nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-label-sm uppercase tracking-widest">
+            <a class="hover:text-primary" href="../catalog.html">Shop</a>
+            <span>/</span>
+            <a class="hover:text-primary" href="#">Clear Case</a>
+          </nav>
+          <h1 class="font-headline-xl text-headline-xl text-primary mb-2">Clear Case</h1>
+          <div class="flex items-center gap-4">
+            <span class="font-headline-md text-headline-md text-on-surface">IDR 125.000</span>
+            <div class="flex items-center gap-1 text-on-tertiary-container">
+              <span class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+              <span class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+              <span class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+              <span class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+              <span class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1">star_half</span>
+              <span class="font-label-md text-label-md text-on-surface-variant ml-1">(124 Reviews)</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <label class="font-label-md text-label-md text-on-surface-variant">INPUT MODEL</label>
+          <div class="grid ">
+            <input type="text" placeholder="Please enter your type of Phone">
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <label class="font-label-md text-label-md text-on-surface-variant uppercase">Floral Selection</label>
+          <div class="flex gap-3">
+            <button class="w-12 h-12 rounded-full border-2 border-primary p-0.5">
+              <div class="w-full h-full rounded-full bg-[#801212]"></div>
+            </button>
+            <button class="w-12 h-12 rounded-full border border-outline-variant p-0.5 hover:border-primary">
+              <div class="w-full h-full rounded-full bg-[#FEC610]"></div>
+            </button>
+            <button class="w-12 h-12 rounded-full border border-outline-variant p-0.5 hover:border-primary">
+              <div class="w-full h-full rounded-full bg-[#E0BFBB]"></div>
+            </button>
+          </div>
+          <p class="font-label-sm text-label-sm text-on-surface-variant italic">
+            Note: Every case is unique as we use real, hand-pressed flowers.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 pt-4">
+          <button
+            class="border border-primary text-primary py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-primary/5 active:scale-95 transition-all">
+            Buy Now!
+          </button>
+        </div>
+        <div class="border-t border-outline-variant pt-8 mt-4 grid grid-cols-2 gap-4">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">local_shipping</span>
+            <span class="font-label-sm text-label-sm">Fast Global Shipping</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">eco</span>
+            <span class="font-label-sm text-label-sm">Eco-friendly Resin</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">verified</span>
+            <span class="font-label-sm text-label-sm">2-Year Warranty</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">volunteer_activism</span>
+            <span class="font-label-sm text-label-sm">Handcrafted with Love</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Details & Specs Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-16 py-24 border-t border-outline-variant">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
+          Artistry in Every Detail
+        </h2>
+        <div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+          <p>
+            Clear Case dari ZYVORA dirancang untuk menampilkan keindahan asli smartphone tanpa mengorbankan
+            perlindungan. Dengan material premium yang jernih, anti-yellowing, dan nyaman digenggam, setiap detail
+            dibuat untuk menghadirkan tampilan minimalis yang elegan serta perlindungan maksimal dalam aktivitas
+            sehari-hari.
+          </p>
+          <div class="pt-4 flex flex-col gap-4">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span>Shock-absorbent TPU bumper with 10ft drop protection.</span>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span>Raised bezel protects your screen and camera lenses.</span>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span>MagSafe compatible for seamless charging and
+                accessories.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden bg-secondary-container p-12 flex flex-col justify-center">
+        <h3 class="font-headline-md text-headline-md text-primary mb-8">
+          Technical Specifications
+        </h3>
+        <dl class="space-y-6 border-l-2 border-primary/20 pl-6">
+          <div>
+            <dt class="font-label-md text-label-md uppercase text-primary tracking-widest mb-1">
+              Materials
+            </dt>
+            <dd class="text-on-surface-variant">
+              Natural pressed flowers, UV-resistant epoxy resin, High-grade
+              TPU bumper.
+            </dd>
+          </div>
+          <div>
+            <dt class="font-label-md text-label-md uppercase text-primary tracking-widest mb-1">
+              Compatibility
+            </dt>
+            <dd class="text-on-surface-variant">
+              iPhone 13, 14, 15 series; Samsung S22, S23, S24 series.
+            </dd>
+          </div>
+          <div>
+            <dt class="font-label-md text-label-md uppercase text-primary tracking-widest mb-1">
+              Weight
+            </dt>
+            <dd class="text-on-surface-variant">
+              Approximately 32 grams (varies slightly by model).
+            </dd>
+          </div>
+          <div>
+            <dt class="font-label-md text-label-md uppercase text-primary tracking-widest mb-1">
+              Finish
+            </dt>
+            <dd class="text-on-surface-variant">
+              High-gloss, scratch-resistant smooth surface.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <!-- Reviews Section -->
+    <section class="py-24 border-t border-outline-variant">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-2">
+            Customer Reflections
+          </h2>
+          <p class="text-on-surface-variant">
+            What our floral community is saying.
+          </p>
+        </div>
+        <button
+          class="border-b-2 border-primary font-label-md text-label-md text-primary pb-1 hover:opacity-70 transition-opacity">
+          Write a Review
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Review Card 1 -->
+        <div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/20">
+          <div class="flex text-on-tertiary-container mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface italic mb-6">
+            "This case is even more beautiful in person. I get compliments
+            every single day. You can tell it was made with such care."
+          </p>
+          <div class="flex items-center gap-4">
+            <div
+              class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              S
+            </div>
+            <div>
+              <p class="font-label-md text-label-md">Sophia R.</p>
+              <p class="font-label-sm text-label-sm text-on-surface-variant">
+                Verified Buyer
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Review Card 2 -->
+        <div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/20">
+          <div class="flex text-on-tertiary-container mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface italic mb-6">
+            "I dropped my phone on concrete yesterday and it survived without
+            a scratch. Beautiful and actually protective!"
+          </p>
+          <div class="flex items-center gap-4">
+            <div
+              class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              M
+            </div>
+            <div>
+              <p class="font-label-md text-label-md">Marcus T.</p>
+              <p class="font-label-sm text-label-sm text-on-surface-variant">
+                Verified Buyer
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Review Card 3 -->
+        <div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/20">
+          <div class="flex text-on-tertiary-container mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 0">star</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface italic mb-6">
+            "Love the unique look. The shipping took a bit longer than
+            expected, but the product quality is undeniable."
+          </p>
+          <div class="flex items-center gap-4">
+            <div
+              class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              L
+            </div>
+            <div>
+              <p class="font-label-md text-label-md">Lily W.</p>
+              <p class="font-label-sm text-label-sm text-on-surface-variant">
+                Verified Buyer
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Recommendations Carousel -->
+    <section class="py-24 border-t border-outline-variant overflow-hidden">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center uppercase tracking-widest">
+        You May Also Like
+      </h2>
+      <div class="flex gap-gutter overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 snap-x">
+        <!-- Rec 1 -->
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="A minimalist phone case with a single large pressed daisy in the center. The background is a soft, pale blue, creating a clean and modern botanical aesthetic. The product is shown from a flat-lay perspective on a clean white surface with artistic shadows."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoGEF4k40f_HhBUbja-NiSMlGMaPSdh3hSu4NvjtddXe7WFpksSWpKgJp1bOmD4frIJguPf8bdUIBa-mXmLWer9ArFmLA1GVasGqAQz7xxTYBn0ZbjAac_a8LQUBRXRf3FN6Y__8oAGlUIy1BMVFw0G0tkZC3v4UxHoCaT0EDQap3eIPHNwff3tXomBtR2iPHHed7WimmJEFZ_rZZPtPylU34I3gmxIJE_Nj8BQ_riTErWU5ZSrtYPxzsUuiFzXsyJ1V_yfZPY8hA" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">
+              Sole Daisy Case
+            </h4>
+            <p class="font-label-md text-label-md text-on-surface-variant">
+              $45.00
+            </p>
+          </div>
+        </div>
+        <!-- Rec 2 -->
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="A luxurious smartphone case featuring gold leaf accents intertwined with dried lavender sprigs. The design is elegant and sophisticated, set against a dark, moody background with velvet textures. The light highlights the shimmering gold foil and the delicate purple of the lavender."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89hsfe-Gx6xZFfKVuxKNyRzilclQe3wNrCn804gIrONVfxnN-3Z-PXScisW6tV7_PEFONwBu63SDXLJeT8R8kngf_BEKgdO8pUTXdHT4fN1-bH7vgevk_zRoHVXirvXoJlRpJHsjNjRRuYyNX17NfptBr2L6Itj2G7MDmdiA_f0IRpG7BOUeAK77vZxlawi8-YWPzURgMyC2_mmUYyTMaV18vJmbNDx4Ni6tOYmqo7eOijQWnyz2EDvuovsclTGo6k19KwcXHjPY" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">
+              Gilded Lavender
+            </h4>
+            <p class="font-label-md text-label-md text-on-surface-variant">
+              $62.00
+            </p>
+          </div>
+        </div>
+        <!-- Rec 3 -->
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="A phone case showcasing an arrangement of miniature autumn leaves and dried fern fronds in deep orange and earthy green tones. The style is rustic and organic, capturing the essence of a forest floor. The photography uses high-contrast shadows and a warm, golden-hour light."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmqj6KB8H9pTGXdzck0lUiub4I7rJgaoDpwjTKJ2AnGx_TfNKNDtwZ7mCkR9L9MW_XiE6-iPCox_ir1ux2Prmej_0h9Ho0cHSe4rLbaIVc77aGIs5dlkaPlbET6SOHgRDAbAEX2oUiqXMQcCk5q-XnYPZNc6l568GLBLjlwaUt2zFIv0_pnLGeWEMx6s9r3ZhrWfRH6w1hq-kMYQ4whQMydrsfia3Rh16RbC9Nb0oAhBjdtkZF-0mi1s6d5-YjnLEg9or-W_73z2A" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">
+              Autumn Fern Case
+            </h4>
+            <p class="font-label-md text-label-md text-on-surface-variant">
+              $54.00
+            </p>
+          </div>
+        </div>
+        <!-- Rec 4 -->
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="A beautiful clear phone case featuring a collage of small wildflowers in various pastel colors like soft blue, pale pink, and lemon yellow. The arrangement is whimsical and airy, photographed on a marble surface with soft, diffused daylight."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbHmwYejEBNmnwXUMq1oZMIuafzNQRZoRFG4GSDkpjnF4Uye5hM9r188EqfOkTN7g9j2y3x-sk1MUziDYj9OxJOmh8kSoPqwgFRRHkFx6Iz9DZYCgRawr99BnzHue5udU0ipFi2TS8q-JwTZgid0nR3FNug92H8IvOv4UXDGxTWrg2QF8F6tKA8yaTvkE9Xf_6jHEDaInfdJezqwG4bHsYD0xjXxyrRj05PpSuTfneycD1tmqwUbDskpK9v1-XP3ro3kMupukwHrg" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">
+              Meadow Mix Case
+            </h4>
+            <p class="font-label-md text-label-md text-on-surface-variant">
+              $48.00
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary-container dark:bg-tertiary-container full-width bottom">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-md md:px-margin-lg py-margin-md max-w-container-max mx-auto">
+      <div class="md:col-span-1">
+        <a class="font-headline-md text-headline-md text-primary mb-6 block" href="index.html">ZYVORA</a>
+        <p class="font-body-md text-on-secondary-container/80 mb-6"><i>"Present for those of you who like to look
+            stylish without forgetting protection for your <br> smartphone!"</i></p>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Shop</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="catalog.html">All Collections</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="newarrival.html">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Company</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="about.html">Our Story</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="https://www.whatsapp.com/download">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">Privacy Policy</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">Shipping &amp; Returns</a></li>
+          <li><a class="font-body-md text-on-secondary-container/80 hover:text-primary hover:underline transition-all"
+              href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="max-w-container-max mx-auto px-margin-md md:px-margin-lg py-6 border-t border-outline-variant/20 text-center">
+      <p class="font-label-sm text-label-sm text-on-secondary-container/60">
+        © 2024 ZYVORA Artisanal Cases. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menu-btn');
+      const closeMenuBtn = document.getElementById('close-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        });
+      }
+
+      if (closeMenuBtn && mobileMenu) {
+        closeMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
