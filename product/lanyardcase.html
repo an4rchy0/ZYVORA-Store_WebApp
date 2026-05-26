@@ -161,10 +161,7 @@
         </div>
       </div>
       <div class="flex items-center gap-4">
-        <a href="../cart.html"><button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
-          data-icon="shopping_bag">shopping_bag</button></a>
-        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
-          data-icon="person">person</button>
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl" data-icon="person"><a href="../profile.html">person</a></button>
         <button id="menu-btn"
           class="md:hidden material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
           data-icon="menu">menu</button>
@@ -191,8 +188,7 @@
       <div class="mt-auto flex justify-center gap-8 py-6 border-t border-outline-variant/20">
         <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl"
           data-icon="shopping_bag">shopping_bag</button>
-        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl"
-          data-icon="person">person</button>
+        <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity text-2xl" data-icon="person"><a href="../profile.html">person</a></button>
       </div>
     </div>
   </div>
@@ -942,6 +938,50 @@
         });
       });
     }
+
+    const addCartBtn = document.getElementById('add-cart-btn');
+
+    addCartBtn.addEventListener('click', () => {
+
+        const isLogin = localStorage.getItem("isLogin");
+
+        if (isLogin !== "true") {
+            alert("Please login first");
+            window.location.href = "../profile.html";
+            return;
+        }
+
+        const productName = "Clear Case";
+        const variant = currentVariant;
+        const priceText = productPrice.textContent;
+
+        const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+
+        const productImage = document.querySelector('.product-image:not(.opacity-60) img').src;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existingIndex = cart.findIndex(item =>
+            item.product === productName && item.variant === variant
+        );
+
+        if (existingIndex !== -1) {
+            cart[existingIndex].qty += 1;
+        } else {
+            cart.push({
+                product: productName,
+                variant: variant,
+                price: price,
+                image: productImage,
+                qty: 1,
+                link: window.location.href   // 🔥 ini penting
+            });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Added to cart!");
+    });
   </script>
 </body>
 

@@ -128,38 +128,88 @@
         }
         /*.sidebar-active { @apply text-primary-container font-semibold border-l-2 border-primary-container pl-4 -ml-[2px];}*/
         .popup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
+            position: fixed;
+            inset: 0;
 
-.popup-content {
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
-    width: 320px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(8px);
 
-.popup-content input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
+            display: none;
+            justify-content: center;
+            align-items: center;
 
-.popup-content button {
-    width: 100%;
-    padding: 10px;
-    background: #5c0004;
-    color: white;
-    border-radius: 8px;
-    margin-top: 12px;
-}
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .popup-content {
+            width: 100%;
+            max-width: 420px;
+
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(20px);
+
+            padding: 32px;
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.2);
+
+            animation: popupFade 0.3s ease;
+        }
+
+        .popup-content input,
+        .popup-content textarea {
+            width: 100%;
+            padding: 14px 16px;
+
+            border: 1px solid #ddd;
+            border-radius: 12px;
+
+            outline: none;
+
+            transition: 0.2s;
+            background: white;
+        }
+
+        .popup-content input:focus,
+        .popup-content textarea:focus {
+            border-color: #5c0004;
+            box-shadow: 0 0 0 3px rgba(92,0,4,0.1);
+        }
+
+        .popup-content button {
+            width: 100%;
+            padding: 14px;
+
+            background: #5c0004;
+            color: white;
+
+            border-radius: 12px;
+
+            font-weight: 600;
+
+            margin-top: 18px;
+
+            transition: 0.2s;
+        }
+
+        .popup-content button:hover {
+            background: #7a0006;
+            transform: translateY(-2px);
+        }
+
+        @keyframes popupFade {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -175,7 +225,7 @@
             </div>
             <div class="flex items-center gap-6">
                 <button class="material-symbols-outlined text-primary-container hover:opacity-80 transition-opacity" data-icon="shopping_bag"><a href="#cart">shopping_bag</a></button>
-                <button class="material-symbols-outlined text-primary-container hover:opacity-80 transition-opacity active:scale-95 duration-150 border-b border-primary pb-1" data-icon="person">person</button>
+                <button class="material-symbols-outlined text-primary-container hover:opacity-80 transition-opacity active:scale-95 duration-150 border-b border-primary pb-1" data-icon="person"><a href="#profile">person</a></button>
             </div>
         </nav>
     </header>
@@ -188,10 +238,10 @@
                     <nav class="flex flex-col gap-6 border-l border-outline-variant/40">
                         <a class="font-label-md text-label-md pl-4 text-primary font-bold border-l-2 border-primary -ml-[1px]" href="#">Overview</a>
                         <a class="font-label-md text-label-md pl-4 text-on-surface-variant hover:text-primary transition-colors" href="#cart">Cart</a>
-                        <a class="font-label-md text-label-md pl-4 text-on-surface-variant hover:text-primary transition-colors" href="#setting">Account Settings</a>
+                        <a class="font-label-md text-label-md pl-4 text-on-surface-variant hover:text-primary transition-colors"href="#"onclick="openAccountSettings()">Account Settings</a>
                         <div class="pt-4 mt-4 border-t border-outline-variant/20">
-                            <a class="font-label-md text-label-md pl-4 text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-2" href="#">
-                                <span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>Sign Out
+                            <a class="font-label-md text-label-md pl-4 text-on-surface-variant/60 hover:text-error transition-colors flex items-center gap-2"href="#" onclick="logout()">
+                                <span class="material-symbols-outlined text-[18px]">logout</span>Sign Out
                             </a>
                         </div>
                     </nav>
@@ -205,43 +255,12 @@
                     <p class="font-body-lg text-body-lg text-on-surface-variant/80"> Manage your account and preferences.</p>
                 </div>
                 <!-- Bento Grid Layout -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="profile">
                     <!-- Recent Orders Section -->
-                    <div
-                        class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
-                        <div class="flex justify-between items-center mb-8" id="profileInfo">
-                            <h3 class="font-headline-md text-headline-md">Recent added</h3>
-                        </div>
-                        <div class="space-y-6">
-                            <!-- Order Item -->
-                            <div class="flex items-center justify-between py-4 border-b border-outline-variant/20 last:border-0 group">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-16 h-16 bg-secondary-container rounded overflow-hidden">
-                                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="datadata" src="./product/Casing/Clear case/clear.jpg" />
-                                    </div>
-                                    <div>
-                                        <p class="font-label-md text-label-md text-on-surface">text</p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant/70">Oct 12, 2023 • $89.00</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-sm text-[10px] uppercase tracking-widest">InTransit</span>
-                            </div>
-                            <!-- Order Item -->
-                            <div
-                                class="flex items-center justify-between py-4 border-b border-outline-variant/20 last:border-0 group">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-16 h-16 bg-secondary-container rounded overflow-hidden">
-                                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                            data-alt="An artistic display of a golden yellow phone case with delicate botanical engravings. The case is placed on a textured stone surface with soft morning light creating gentle shadows. The palette features warm ochre and cream tones, evoking a sense of refined, handcrafted luxury consistent with artisanal gift design."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4pZviQtMdYkhmv_cYOgRiKNoQwqLqXfKd6qyFUcuEHKGKvapTKLUE1FWvVt2fgYBClvVAJQXdi0ggjezCUFveJfVbioIEB9ujaE_GjENLEkfuUoFWZXWKLxCd9aJY_VbKyxroJeyHZh7W7aIYlhSlbXni0dVjlRMfIAKz08DaCD3GFYnN37yjKCxaJW-dNlKds9v0UN3dLu-lCp-9FI5bgGLmGQjxOlf4U14UXx8cgZTFQqTaZ-M3-WsJ3CprdJpFIPJxthGPN9M" />
-                                    </div>
-                                    <div>
-                                        <p class="font-label-md text-label-md text-on-surface">#ZV-88129</p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant/70">Aug 24, 2023 • $124.00</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-[10px] uppercase tracking-widest">Delivered</span>
-                            </div>
+                    <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
+                        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
+                            <h3 class="font-headline-md text-headline-md mb-6">Account Information</h3>
+                            <div id="profileInfo" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm"></div>
                         </div>
                     </div>
                     <!-- Member Perks Card -->
@@ -249,17 +268,13 @@
                         <div class="relative z-10">
                             <h3 class="font-headline-md text-headline-md text-on-primary-container mb-4">Rose Gold Member</h3>
                             <p class="font-body-md text-body-md opacity-90 mb-6">Buy any product to improve your tier! </p>
-                            <div class="w-full bg-on-primary-container/20 h-1 rounded-full mb-2 overflow-hidden">
-                                <div class="bg-on-primary-container h-full w-3/4"></div>
-                            </div>
-                            <p class="font-label-sm text-[10px] uppercase tracking-tighter"> 750 / 1000 points to next tier </p>
                         </div>
                         <div class="absolute -bottom-10 -right-10 opacity-10 group-hover:rotate-12 transition-transform duration-700">
                             <span class="material-symbols-outlined text-[160px]" data-icon="filter_vintage">filter_vintage</span>
                         </div>
                     </div>
                     <!-- Botanical Favorites Section -->
-                    <div class="md:col-span-3">
+                    <div class="md:col-span-3" id="cart">
                         <div class="flex items-center gap-4 mb-8" id="cartList">
                             <h3 class="font-headline-md text-headline-md">Cart Saved</h3>
                             <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
@@ -325,26 +340,62 @@
     <!-- POPUP AUTH -->
     <div class="popup" id="loginPopup">
         <div class="popup-content">
+
             <!-- LOGIN FORM -->
             <div id="loginForm">
-                <h2 class="text-2xl font-bold mb-4">Login</h2>
-                <input type="text" id="username"placeholder="Username">
-                <input type="password"id="password"placeholder="Password"class="mt-3">
+                <h2 class="text-3xl font-bold mb-6 text-center text-[#5c0004]">
+                    Welcome Back
+                </h2>
+
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password" class="mt-3">
+
                 <button onclick="login()">Login</button>
-                <p class="mt-4 text-sm text-center">Don't have an account yet?
-                    <span onclick="showRegister()"class="text-blue-600 cursor-pointer">Register here</span>
+
+                <p class="mt-5 text-sm text-center text-gray-600">
+                    Don't have an account?
+                    <span onclick="showRegister()" class="text-[#5c0004] font-semibold cursor-pointer hover:underline">
+                        Register here
+                    </span>
                 </p>
             </div>
+
             <!-- REGISTER FORM -->
             <div id="registerForm" style="display:none;">
-                <h2 class="text-2xl font-bold mb-4">Register</h2>
-                <input type="text"id="regUsername"placeholder="Username">
-                <input type="password"id="regPassword" placeholder="Password" class="mt-3">
+
+                <h2 class="text-3xl font-bold mb-6 text-center text-[#5c0004]">
+                    Create Account
+                </h2>
+
+                <input type="text" id="fullname" placeholder="Full Name">
+
+                <input type="text" id="regUsername" placeholder="Username" class="mt-3">
+
+                <input type="email" id="email" placeholder="Email / Gmail" class="mt-3">
+
+                <input type="tel" id="phone" placeholder="Phone Number" class="mt-3">
+
+                <textarea
+                    id="address"
+                    placeholder="Full Address"
+                    class="mt-3 w-full p-3 border border-gray-300 rounded-lg resize-none h-24"
+                ></textarea>
+
+                <input type="password" id="regPassword" placeholder="Password" class="mt-3">
+
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" class="mt-3">
+
                 <button onclick="register()">Register</button>
-                <p class="mt-4 text-sm text-center">Sudah punya akun?
-                    <span onclick="showLogin()"class="text-blue-600 cursor-pointer">Login</span>
+
+                <p class="mt-5 text-sm text-center text-gray-600">
+                    Already have an account?
+                    <span onclick="showLogin()" class="text-[#5c0004] font-semibold cursor-pointer hover:underline">
+                        Login
+                    </span>
                 </p>
+
             </div>
+
         </div>
     </div>
 
