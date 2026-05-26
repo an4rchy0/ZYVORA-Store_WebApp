@@ -279,8 +279,12 @@
             </dl>
           </div>
         </div>
-        <div class="flex flex-col gap-3 pt-4">
-          <button id="buy-now-btn" class="border border-primary text-primary py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-primary/5 active:scale-95 transition-all">Buy Now!</button>
+        <div class="flex gap-3 pt-4">
+          <button id="buy-now-btn"class="flex-1 border border-primary bg-primary text-white py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">Buy Now!</button>
+          <!-- Add to Cart -->
+          <button id="add-cart-btn" class="flex-1 border border-outline-variant bg-surface text-on-surface py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-surface-container transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">shopping_cart</span>Add to Cart
+          </button>
         </div>
         <div class="border-t border-outline-variant pt-8 mt-4 grid grid-cols-2 gap-4">
           <div class="flex items-center gap-3">
@@ -416,19 +420,19 @@
           </div></a>
         </div>
         <!-- Rec 2 -->
-        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group"><a href="../product/softcase.html">
           <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
             <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               data-alt="A luxurious smartphone case featuring gold leaf accents intertwined with dried lavender sprigs. The design is elegant and sophisticated, set against a dark, moody background with velvet textures. The light highlights the shimmering gold foil and the delicate purple of the lavender."
               src="../product/Casing/Softcase/cov.jpg" />
           </div>
           <div class="text-center">
-            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Softcase</h4>
+            <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Soft Case</h4>
             <p class="font-label-md text-label-md text-on-surface-variant">Rp65.000</p>
-          </div>
+          </div></a>
         </div>
         <!-- Rec 4 -->
-        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group"><a href="../product/phonestrap.html">
           <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
             <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               data-alt="A beautiful clear phone case featuring a collage of small wildflowers in various pastel colors like soft blue, pale pink, and lemon yellow. The arrangement is whimsical and airy, photographed on a marble surface with soft, diffused daylight."
@@ -437,10 +441,10 @@
           <div class="text-center">
             <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Phone Strap</h4>
             <p class="font-label-md text-label-md text-on-surface-variant">Rp15.000-20.000</p>
-          </div>
+          </div></a>
         </div>
         <!-- Rec 3 -->
-        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group">
+        <div class="min-w-[280px] md:min-w-[320px] snap-start flex flex-col gap-4 group"><a href="../product/lanyardcase.html">
           <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
             <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               data-alt="A phone case showcasing an arrangement of miniature autumn leaves and dried fern fronds in deep orange and earthy green tones. The style is rustic and organic, capturing the essence of a forest floor. The photography uses high-contrast shadows and a warm, golden-hour light."
@@ -449,7 +453,7 @@
           <div class="text-center">
             <h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Lanyard Case</h4>
             <p class="font-label-md text-label-md text-on-surface-variant">Rp.100.000</p>
-          </div>
+          </div></a>
         </div>
       </div>
     </section>
@@ -518,6 +522,14 @@
           <div class="flex justify-between">
             <span>Shipping</span>
             <span>RP10.000</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="phonetype"class="font-label-md text-label-md text-on-surface">Phone Type</label>
+            <input type="text" id="phonetype" name="phonetype" placeholder="Enter type of your phone" required class="w-full border border-outline-variant rounded-lg p-3 focus:outline-none focus:border-primary">
+          </div>
+          <div class="flex flex-col gap-2 mt-4">
+            <label for="note" class="font-label-md text-label-md text-on-surface">Note</label>
+            <textarea name="note" id="note" placeholder="Type your note message to seller" required class="w-full min-h-[120px] border border-outline-variant rounded-lg p-3 resize-none focus:outline-none focus:border-primary"></textarea>
           </div>
           <hr>
           <div class="flex justify-between font-bold text-lg">
@@ -776,6 +788,20 @@
 
     // lanjut pembayaran
     confirmBuyBtn.addEventListener('click', () => {
+      const phoneType = document.getElementById('phonetype');
+      const note = document.getElementById('note');
+
+      if (phoneType.value.trim() === "") {
+        alert("Please enter your phone type");
+        phoneType.focus();
+        return;
+      }
+
+      if (note.value.trim() === "") {
+        alert("Please enter a note");
+        note.focus();
+        return;
+      }
 
       purchaseContent.classList.add('hidden');
       barcodeSection.classList.remove('hidden');
