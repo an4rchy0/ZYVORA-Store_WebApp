@@ -751,32 +751,25 @@
 
     // buka modal
     buyNowBtn.addEventListener('click', () => {
-
+      if (!requireLogin()) return;
       const currentPrice = productPrice.textContent;
-
       // hitung total
       const numericPrice = parseInt(
         currentPrice.replace(/[^0-9]/g, '')
       );
-
       const shipping = 10000;
-
       const total = numericPrice + shipping;
-
       // isi detail
       confirmProduct.textContent = "Lanyard Case";
       confirmVariant.textContent = currentVariant;
       confirmPrice.textContent = currentPrice;
       confirmTotal.textContent =
         "RP" + total.toLocaleString('id-ID');
-
       // reset tampilan
       purchaseContent.classList.remove('hidden');
       barcodeSection.classList.add('hidden');
       successSection.classList.add('hidden');
-
       progressBar.style.width = '0%';
-
       // tampilkan modal
       purchaseModal.classList.remove('hidden');
       purchaseModal.classList.add('flex');
@@ -815,15 +808,41 @@
 
       // tunggu 10 detik
       setTimeout(() => {
-
-        barcodeSection.classList.add('hidden');
-        successSection.classList.remove('hidden');
-
-        // redirect ke home
-        setTimeout(() => {
-          window.location.href = "../index.html";
-        }, 3000);
-
+          // =========================
+          // SAVE ORDER
+          // =========================
+          let orders =
+              JSON.parse(localStorage.getItem("orders")) || [];
+          const orderData = {
+              id: "ZYV-" + Date.now(),
+              product: "Lanyard Case",
+              variant: currentVariant,
+              price: confirmPrice.textContent,
+              total: confirmTotal.textContent,
+              image:
+              document.querySelector(
+                  '.product-image:not(.opacity-60) img'
+              ).src,
+              phoneType:
+              document.getElementById('phonetype').value,
+              note:
+              document.getElementById('note').value,
+              status: "Paid",
+              date:
+              new Date().toLocaleString('id-ID')
+          };
+          orders.unshift(orderData);
+          localStorage.setItem(
+              "orders",
+              JSON.stringify(orders)
+          );
+          // =========================
+          barcodeSection.classList.add('hidden');
+          successSection.classList.remove('hidden');
+          // redirect ke home
+          setTimeout(() => {
+              window.location.href = "../index.html";
+          }, 3000);
       }, 10000);
 
     });
@@ -846,6 +865,7 @@
 
     // buka modal
     addReviewBtn.addEventListener('click', () => {
+      if (!requireLogin()) return;
       reviewModal.classList.remove('hidden');
       reviewModal.classList.add('flex');
     });
@@ -939,32 +959,33 @@
       });
     }
 
-    const addCartBtn = document.getElementById('add-cart-btn');
-
-    addCartBtn.addEventListener('click', () => {
-
+    // ===============================
+    // LOGIN CHECK
+    // ===============================
+    function requireLogin() {
         const isLogin = localStorage.getItem("isLogin");
-
         if (isLogin !== "true") {
             alert("Please login first");
             window.location.href = "../profile.html";
-            return;
+            return false;
         }
+        return true;
+    }
 
-        const productName = "Clear Case";
+    const addCartBtn = document.getElementById('add-cart-btn');
+    addCartBtn.addEventListener('click', () => {
+        if (!requireLogin()) return;
+        const productName = "Phone Strap";
         const variant = currentVariant;
         const priceText = productPrice.textContent;
-
         const price = parseInt(priceText.replace(/[^0-9]/g, ''));
-
         const productImage = document.querySelector('.product-image:not(.opacity-60) img').src;
-
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         const existingIndex = cart.findIndex(item =>
-            item.product === productName && item.variant === variant
+            item.product === productName &&
+            item.variant === variant
         );
-
         if (existingIndex !== -1) {
             cart[existingIndex].qty += 1;
         } else {
@@ -974,12 +995,10 @@
                 price: price,
                 image: productImage,
                 qty: 1,
-                link: window.location.href   // 🔥 ini penting
+                link: window.location.href
             });
         }
-
         localStorage.setItem("cart", JSON.stringify(cart));
-
         alert("Added to cart!");
     });
   </script>

@@ -252,6 +252,7 @@ function loadProfile() {
     }
     renderProfile();
     loadCart();
+    loadOrders();
 }
 
 function loadCart() {
@@ -298,5 +299,106 @@ function removeCartItem(index) {
     localStorage.setItem("cart", JSON.stringify(cart));
 
     loadCart();
+}
+
+// =======================
+// LOAD ORDER HISTORY
+// =======================
+function loadOrders() {
+
+    const orderContainer =
+        document.getElementById("orderContainer");
+
+    if (!orderContainer) return;
+
+    let orders =
+        JSON.parse(localStorage.getItem("orders")) || [];
+
+    if (orders.length === 0) {
+
+        orderContainer.innerHTML = `
+            <div class="bg-white border rounded-lg p-6">
+                <p class="text-gray-500">
+                    No order history yet
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+    orderContainer.innerHTML =
+        orders.map(order => {
+
+        return `
+            <div class="bg-white border rounded-xl p-5 shadow-sm">
+
+                <div class="flex gap-4">
+
+                    <img
+                        src="${order.image}"
+                        class="w-24 h-24 object-cover rounded-lg border"
+                    >
+
+                    <div class="flex-1">
+
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-lg">
+                                    ${order.product}
+                                </h4>
+
+                                <p class="text-sm text-gray-500">
+                                    ${order.variant}
+                                </p>
+                            </div>
+
+                            <span
+                                class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">
+                                ${order.status}
+                            </span>
+                        </div>
+
+                        <div class="mt-4 space-y-1 text-sm">
+
+                            <p>
+                                <span class="text-gray-500">
+                                    Order ID:
+                                </span>
+
+                                ${order.id}
+                            </p>
+
+                            <p>
+                                <span class="text-gray-500">
+                                    Phone:
+                                </span>
+
+                                ${order.phoneType}
+                            </p>
+
+                            <p>
+                                <span class="text-gray-500">
+                                    Total:
+                                </span>
+
+                                <span class="font-semibold">
+                                    ${order.total}
+                                </span>
+                            </p>
+
+                            <p class="text-xs text-gray-400 mt-2">
+                                ${order.date}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+    }).join('');
 }
 
